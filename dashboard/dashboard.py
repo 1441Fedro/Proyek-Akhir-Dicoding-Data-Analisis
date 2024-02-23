@@ -40,7 +40,7 @@ with tab2:
     }, inplace=True)
 
     st.dataframe(data=question1_df, width=400, height=300)
-    st.bar_chart(data=question1_df, color="#87CEEB")
+    st.bar_chart(data=question1_df)
 
 with tab3:
     selected_city = st.selectbox("Pilih kota:", all_df["station"].unique(),
