@@ -48,8 +48,6 @@ with tab3:
 
     filtered_df = filter_data_by_city(all_df, selected_city)
 
-    st.dataframe(data=filtered_df, width=500, height=200)
-    
     filtered_df = filtered_df.groupby(by=["year"]).agg({
         "NO2_sum": "sum"
     })
@@ -57,5 +55,7 @@ with tab3:
     filtered_df.rename(columns={
         "NO2_sum": "Jumlah Tahunan"
     }, inplace=True)
+
+    st.dataframe(data=filtered_df, width=400, height=200)
 
     st.bar_chart(data=filtered_df["Jumlah Tahunan"])
